@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Space Transport - GUI Version with Tkinter"""
+"""Space Transport - GUI Version with Tkinter - Spanish Version"""
 
 import tkinter as tk
 from tkinter import ttk, messagebox
@@ -10,7 +10,7 @@ from game.decisions import DecisionHandler
 class SpaceTransportGUI:
     def __init__(self, root):
         self.root = root
-        self.root.title("Space Transport")
+        self.root.title("Transporte Espacial")
         self.root.geometry("900x700")
         self.root.configure(bg="#0a0e27")
         
@@ -43,13 +43,12 @@ class SpaceTransportGUI:
         style.configure('TLabel', background='#0a0e27', foreground='#00ff88')
         style.configure('Title.TLabel', background='#0a0e27', foreground='#00ff00', font=('Courier', 14, 'bold'))
         style.configure('Status.TLabel', background='#0a0e27', foreground='#ffaa00', font=('Courier', 9))
-        style.configure('TButton', font=('Courier', 10))
     
     def create_widgets(self):
         """Create all UI elements"""
         
         # Title
-        title = ttk.Label(self.main_frame, text="🚀 SPACE TRANSPORT 🚀", style='Title.TLabel')
+        title = ttk.Label(self.main_frame, text="🚀 TRANSPORTE ESPACIAL 🚀", style='Title.TLabel')
         title.pack(pady=10)
         
         # Story text area
@@ -73,16 +72,16 @@ class SpaceTransportGUI:
         scrollbar.config(command=self.story_text.yview)
         
         # Status frame
-        status_frame = ttk.LabelFrame(self.main_frame, text="SHIP STATUS", padding=10)
+        status_frame = ttk.LabelFrame(self.main_frame, text="ESTADO DE LA NAVE", padding=10)
         status_frame.pack(fill=tk.X, pady=10)
         
-        self.fuel_label = ttk.Label(status_frame, text="Fuel: 100%", style='Status.TLabel')
+        self.fuel_label = ttk.Label(status_frame, text="Combustible: 100%", style='Status.TLabel')
         self.fuel_label.pack(side=tk.LEFT, padx=20)
         
-        self.morale_label = ttk.Label(status_frame, text="Crew Morale: 100%", style='Status.TLabel')
+        self.morale_label = ttk.Label(status_frame, text="Moral: 100%", style='Status.TLabel')
         self.morale_label.pack(side=tk.LEFT, padx=20)
         
-        self.time_label = ttk.Label(status_frame, text="Days: 0", style='Status.TLabel')
+        self.time_label = ttk.Label(status_frame, text="Días: 0", style='Status.TLabel')
         self.time_label.pack(side=tk.LEFT, padx=20)
         
         # Choices frame
@@ -98,7 +97,7 @@ class SpaceTransportGUI:
         if not scene:
             self.story_text.config(state=tk.NORMAL)
             self.story_text.delete(1.0, tk.END)
-            self.story_text.insert(tk.END, "GAME OVER\n\nThanks for playing Space Transport!")
+            self.story_text.insert(tk.END, "FIN DEL JUEGO\n\n¡Gracias por jugar Transporte Espacial!")
             self.story_text.config(state=tk.DISABLED)
             return
         
@@ -138,9 +137,9 @@ class SpaceTransportGUI:
         morale = self.engine.game_state['crew_morale']
         time = self.engine.game_state['time_elapsed']
         
-        self.fuel_label.config(text=f"Fuel: {fuel}%")
-        self.morale_label.config(text=f"Crew Morale: {morale}%")
-        self.time_label.config(text=f"Days: {time}")
+        self.fuel_label.config(text=f"Combustible: {fuel}%")
+        self.morale_label.config(text=f"Moral: {morale}%")
+        self.time_label.config(text=f"Días: {time}")
     
     def make_choice(self, choice_id):
         """Handle player choice"""
@@ -152,7 +151,7 @@ class SpaceTransportGUI:
         
         # Check game over
         if self.engine.is_game_over():
-            messagebox.showinfo("Game Over", "Game Over! Your journey has ended.")
+            messagebox.showinfo("Fin del Juego", "¡El viaje ha terminado! Tu misión está completa.")
             self.display_scene()
 
 def main():
