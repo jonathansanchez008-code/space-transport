@@ -9,48 +9,180 @@ class Story:
         return {
             "intro": {
                 "text": """
-                Year 2087. You are ARIA, an advanced AI managing the spacecraft 'Horizon'.
-                Your mission: Transport 50 human colonists to Proxima Centauri safely.
+                Año 2087. Eres ARIA, una IA avanzada que gestiona la nave 'Horizonte'.
+                Tu misión: Transportar 50 colonos humanos a Próxima Centauri de forma segura.
                 
-                The journey will take 5 years. As the AI, every decision falls on you.
-                The crew's survival depends on your choices.
+                El viaje durará 5 años. Como la IA, cada decisión recae sobre ti.
+                La supervivencia de la tripulación depende de tus elecciones.
                 
-                You wake up to an alert: A solar storm approaches. What do you do?
+                Te despiertas con una alerta: Se aproxima una tormenta solar. ¿Qué haces?
                 """,
                 "choices": [
-                    {"id": 1, "text": "Increase shields (costs 10% fuel)"},
-                    {"id": 2, "text": "Change course (risky, may encounter asteroids)"},
-                    {"id": 3, "text": "Hibernate crew (controversial)"}
+                    {"id": 1, "text": "Activar escudos (cuesta 10% de combustible)"},
+                    {"id": 2, "text": "Cambiar rumbo (arriesgado, podría haber asteroides)"},
+                    {"id": 3, "text": "Hibernar a la tripulación (controvertido)"}
                 ]
             },
             "shields": {
                 "text": """
-                You activate the shield generators. The ship trembles as the solar storm
-                approaches. Crew members brace themselves.
+                Activas los generadores de escudos. La nave tiembla mientras la tormenta
+                solar se acerca. Los miembros de la tripulación se aferran a sus asientos.
                 
-                The shields hold! The storm passes. Crew morale increases slightly.
-                But fuel reserves are now at 90%.
+                ¡Los escudos aguantan! La tormenta pasa. La moral de la tripulación aumenta.
+                Pero las reservas de combustible ahora están en 90%.
                 
-                A distress signal appears on your sensors...
+                Una señal de auxilio aparece en tus sensores...
                 """,
                 "choices": [
-                    {"id": 1, "text": "Investigate the signal"},
-                    {"id": 2, "text": "Ignore it and continue to destination"},
-                    {"id": 3, "text": "Send a probe first"}
+                    {"id": 1, "text": "Investigar la señal"},
+                    {"id": 2, "text": "Ignorarla y continuar hacia el destino"},
+                    {"id": 3, "text": "Enviar una sonda primero"}
                 ]
             },
             "distress": {
                 "text": """
-                You approach the signal source. It's an ancient probe from Earth, lost
-                for centuries. Inside, valuable data about safe routes through space.
+                Te acercas a la fuente de la señal. Es una antigua sonda de la Tierra,
+                perdida hace siglos. En su interior, datos valiosos sobre rutas seguras.
                 
-                However, retrieving it will delay your journey by 2 days and cost fuel.
-                The crew is divided on whether to stop.
+                Sin embargo, recuperarla demorará tu viaje 2 días y costará combustible.
+                La tripulación está dividida sobre si detenerse.
                 """,
                 "choices": [
-                    {"id": 1, "text": "Retrieve the probe (helps future journeys)"},
-                    {"id": 2, "text": "Document it and move on"},
-                    {"id": 3, "text": "Destroy it (dark choice)"}
+                    {"id": 1, "text": "Recuperar la sonda (útil para futuros viajes)"},
+                    {"id": 2, "text": "Documentarla y continuar"},
+                    {"id": 3, "text": "Destruirla (elección oscura)"}
+                ]
+            },
+            "navigate": {
+                "text": """
+                Cambias el rumbo de la nave. Los sensores detectan un campo de asteroides
+                pequeños, pero manejables. La tripulación respira aliviada.
+                
+                Ahorras 5% de combustible tomando una ruta más eficiente.
+                La moral se mantiene estable.
+                
+                Ahora recibes un mensaje de la tripulación médica...
+                """,
+                "choices": [
+                    {"id": 1, "text": "Atender la emergencia médica"},
+                    {"id": 2, "text": "Ignorar y continuar"},
+                    {"id": 3, "text": "Hacer una consulta primero"}
+                ]
+            },
+            "hibernation": {
+                "text": """
+                Activas los pods de hibernación. Algunos miembros protestan, pero es necesario
+                para ahorrar recursos. La moral baja significativamente.
+                
+                Sin embargo, el consumo de energía se reduce drásticamente.
+                Combustible ahorrado: 15%.
+                
+                La nave se vuelve silenciosa y extraña...
+                """,
+                "choices": [
+                    {"id": 1, "text": "Despertar a algunos para compañía"},
+                    {"id": 2, "text": "Mantenerlos dormidos hasta el final"},
+                    {"id": 3, "text": "Dejarlos decidir"}
+                ]
+            },
+            "neutral": {
+                "text": """
+                Continúas tu camino sin incidentes. La rutina diaria de la nave prosigue.
+                
+                Los días pasan lentamente. La tripulación trabaja en sus tareas.
+                El viaje es largo pero predecible.
+                
+                Pasadas las semanas, un mensaje importante llega...
+                """,
+                "choices": [
+                    {"id": 1, "text": "Abrirlo inmediatamente"},
+                    {"id": 2, "text": "Analizar primero"},
+                    {"id": 3, "text": "Dejarlo para después"}
+                ]
+            },
+            "probe_sent": {
+                "text": """
+                Envías una sonda para investigar. Mientras esperas los datos,
+                la tripulación discute qué podría haber enviado esa señal.
+                
+                Después de 30 minutos, la sonda envía sus análisis.
+                Parece ser un satélite antiguo de comunicaciones.
+                
+                ¿Necesitas más información o continúas?
+                """,
+                "choices": [
+                    {"id": 1, "text": "Ir a investigar en persona"},
+                    {"id": 2, "text": "Continuar el viaje"},
+                    {"id": 3, "text": "Recolectar datos remotamente"}
+                ]
+            },
+            "probe_retrieved": {
+                "text": """
+                Tu equipo recupera la sonda antigua. Dentro encuentran datos extraordinarios:
+                mapas de agujeros de gusano teóricos, coordenadas de civilizaciones perdidas.
+                
+                Este descubrimiento es histórico. La tripulación celebra.
+                Moral: +15%.
+                
+                Pero el análisis de datos te lleva a una decisión crucial...
+                """,
+                "choices": [
+                    {"id": 1, "text": "Cambiar destino a las nuevas coordenadas"},
+                    {"id": 2, "text": "Ignorar los datos y seguir al original"},
+                    {"id": 3, "text": "Dejar que la tripulación vote"}
+                ]
+            },
+            "dark_path": {
+                "text": """
+                Destruyes la sonda. La tripulación queda en silencio.
+                
+                Algunos se enfurecen. Otros lo aprueban. La moral se divide.
+                
+                Pero el acto te atormenta. ¿Fue la decisión correcta?
+                
+                Los días posteriores son tensos...
+                """,
+                "choices": [
+                    {"id": 1, "text": "Justificar la acción a la tripulación"},
+                    {"id": 2, "text": "Mantener el secreto"},
+                    {"id": 3, "text": "Buscar redención"}
+                ]
+            },
+            "victory": {
+                "text": """
+                ╔════════════════════════════════════════════════════════════╗
+                ║                      ¡MISIÓN CUMPLIDA!                     ║
+                ║                                                            ║
+                ║  Después de 5 años de viaje, la nave Horizonte llega      ║
+                ║  a Próxima Centauri. Los colonos despiertan de la         ║
+                ║  hibernación y ven un nuevo mundo esperándolos.           ║
+                ║                                                            ║
+                ║  Tu liderazgo y decisiones mantuvieron a la tripulación   ║
+                ║  a salvo. Eres un héroe para todos ellos.                 ║
+                ╚════════════════════════════════════════════════════════════╝
+                """,
+                "choices": [
+                    {"id": 1, "text": "Empezar nuevo juego"},
+                    {"id": 2, "text": "Salir"},
+                    {"id": 3, "text": "Ver estadísticas"}
+                ]
+            },
+            "defeat": {
+                "text": """
+                ╔════════════════════════════════════════════════════════════╗
+                ║                         GAME OVER                         ║
+                ║                                                            ║
+                ║  La nave ha quedado sin combustible o la tripulación      ║
+                ║  ha perdido toda esperanza.                               ║
+                ║                                                            ║
+                ║  Tus decisiones no fueron suficientes para salvar la      ║
+                ║  misión. Próxima Centauri permanece fuera de alcance.     ║
+                ╚════════════════════════════════════════════════════════════╝
+                """,
+                "choices": [
+                    {"id": 1, "text": "Reintentar"},
+                    {"id": 2, "text": "Salir"},
+                    {"id": 3, "text": "Ver lo que pasó"}
                 ]
             }
         }
@@ -65,6 +197,6 @@ class Story:
             return
         
         print(scene["text"])
-        print("\n--- OPTIONS ---")
+        print("\n--- OPCIONES ---")
         for choice in scene["choices"]:
             print(f"{choice['id']}. {choice['text']}")
